@@ -40,8 +40,9 @@
         const { createApp, ref, onMounted } = Vue;
         const { createRouter, createWebHashHistory } = VueRouter;
 
-        // Definisikan Base URL API backend CodeIgniter 4 kamu
-        const API_URL = 'http://localhost:8080';
+        // Definisikan Base URL API backend CodeIgniter 4 kamu yang sudah online
+        // SILAKAN GANTI URL DI BAWAH INI DENGAN ALAMAT HOSTING BACKEND CI4 KAMU SEBENARNYA
+        const API_URL = 'https://api-inventory-kamu.com';
 
         // ==========================================
         // 1. KOMPONEN HALAMAN MODULAR (SPA)
@@ -371,7 +372,7 @@
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stok</th>
                                     <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Aksi</th>
                                 </tr>
-                            </table>
+                            </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <tr v-for="item in barangList" :key="item.id_barang">
                                     <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{{ item.nama_barang }}</td>
@@ -525,7 +526,7 @@
                         await axios.post(`${API_URL}/auth/logout`);
                     } catch (error) {
                         console.error("Gagal menghapus token di server, membersihkan penyimpanan lokal...");
-                    } finally {
+                    } {
                         localStorage.clear();
                         alert("Berhasil Log Out!");
                         window.location.href = '#/';
