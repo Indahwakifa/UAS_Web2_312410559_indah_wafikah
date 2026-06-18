@@ -2,7 +2,7 @@ const { createApp, ref, onMounted } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
 
 // Definisikan Base URL API backend CodeIgniter 4 kamu
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://icy-emblaze-marrow.ngrok-free.dev';
 
 // ==========================================
 // 1. KOMPONEN HALAMAN MODULAR (SPA)
